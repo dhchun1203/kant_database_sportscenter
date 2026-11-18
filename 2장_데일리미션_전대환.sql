@@ -51,7 +51,7 @@ ORDER BY 회원명;
 SELECT
     s.sport_name AS 종목,
     e.enroll_month AS 수강월,
-    COUNT(*) AS 수강인원,
+    COUNT(e.course_id) AS 수강인원,
     SUM(e.pay_amount) AS 매출
 FROM sports s
 LEFT JOIN courses c ON (c.sport_id = s.sport_id)
